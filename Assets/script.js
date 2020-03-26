@@ -40,8 +40,14 @@ function generatePassword() {
         errors.push("must have symbols");
 
     }
-
-    return "password";
+    // 
+    var lowerCaseChars = "qwertyuiopasdfghjklzxcvbnm";
+    var randomPassword = "";
+    for (var i = 0; i < length; i++) {
+        var lowerCaseIndex = Math.floor(Math.random() * lowerCaseChars.length);
+        randomPassword = randomPassword + lowerCaseChars[lowerCaseIndex];
+    }
+    return randomPassword;
 }
 
 // Add event listener to generate button
