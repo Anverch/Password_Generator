@@ -33,13 +33,15 @@ function generatePassword() {
     var finalPassword = "";
 
     while (finalPassword.length < length) {
-
         if (lowerCase === true) {
             var lowerCaseIndex = Math.floor(Math.random() * lowerCaseChars.length);
             finalPassword = finalPassword + lowerCaseChars[lowerCaseIndex];
         }
 
-
+        if (upperCase === true) {
+            var upperCaseIndex = Math.floor(Math.random() * upperCaseChars.length);
+            finalPassword = finalPassword + upperCaseChars[upperCaseIndex];
+        }
     }
 
     // for (var i = 0; i < length; i++) {
