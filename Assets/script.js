@@ -9,21 +9,21 @@ function writePassword() {
     passwordText.value = password;
 
 }
-// condtions for the password //
+// condition for the password 
 function generatePassword() {
     var length = parseInt(prompt("How long should your password be?"));
 
-
+    //primary condition
     var errors = [];
     if (length < 8 || length > 50 || !length) {
         return "Length not enough";
     }
-
+    //secondary conditions 
     var lowerCase = confirm("Include lower case?");
     var upperCase = confirm("Include upper case?");
     var numeric = confirm("Include numbers?");
     var symbols = confirm("Include symbols?");
-
+    //when conditions are false 
     if (!lowerCase) {
         errors.push("must have lower case");
 
@@ -40,8 +40,12 @@ function generatePassword() {
         errors.push("must have symbols");
 
     }
-    // 
-    var lowerCaseChars = "qwertyuiopasdfghjklzxcvbnm";
+    // defined variables 
+    var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
+    var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var numbersCase = "0123456789"
+    var symbolsCase = "!@#$%^&*()_+~`|}{[]\:;?><,./-="
+
     var randomPassword = "";
     for (var i = 0; i < length; i++) {
         var lowerCaseIndex = Math.floor(Math.random() * lowerCaseChars.length);
