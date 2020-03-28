@@ -66,8 +66,8 @@ function generatePassword() {
 
 // Generates Random character from list of characters 
 function generateRandomCharacter(characters) {
-    var symbolIndex = Math.floor(Math.random() * characters.length);
-    return characters[symbolIndex];
+    var index = Math.floor(Math.random() * characters.length);
+    return characters[index];
 }
 
 // Add event listener to generate button
