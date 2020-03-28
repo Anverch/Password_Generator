@@ -43,15 +43,23 @@ function generatePassword() {
     // defined variables 
     var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
     var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var numbersCase = "0123456789"
-    var symbolsCase = "!@#$%^&*()_+~`|}{[]\:;?><,./-="
+    //var numbersCase = "0123456789";
+    //var symbolsCase = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
 
-    var randomPassword = "";
+    var randomPasswordLower = "";
+    var randomPasswordUpper = "";
     for (var i = 0; i < length; i++) {
         var lowerCaseIndex = Math.floor(Math.random() * lowerCaseChars.length);
-        randomPassword = randomPassword + lowerCaseChars[lowerCaseIndex];
+        randomPasswordLower = randomPasswordLower + lowerCaseChars[lowerCaseIndex];
+        var upperCaseIndex = Math.floor(Math.random() * upperCaseChars.length);
+        randomPasswordUpper = randomPasswordUpper + upperCaseChars[upperCaseIndex];
+
     }
-    return randomPassword;
+
+    // for (var i = 0; i < length; i++) {
+
+    // }
+    return randomPasswordLower + randomPasswordUpper;
 }
 
 // Add event listener to generate button
