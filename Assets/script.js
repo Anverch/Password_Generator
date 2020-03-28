@@ -9,7 +9,7 @@ function writePassword() {
     passwordText.value = password;
 }
 
-// condition for the password 
+// Prompts user for password criteria and outputs random password
 function generatePassword() {
     var userLength = parseInt(prompt("How long should your password be?"));
 
@@ -27,8 +27,8 @@ function generatePassword() {
     // Defines characters that can be included in the password
     var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
     var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var numbersCase = "0123456789";
-    var symbolsCase = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
+    var numericChars = "0123456789";
+    var symbolChars = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
 
     // Contains generated password
     var generatedPassword = "";
@@ -52,15 +52,15 @@ function generatePassword() {
         // Checks if numeric character is selected
         if (numeric === true) {
             // Selects random numeric character 
-            var numCaseIndex = Math.floor(Math.random() * numbersCase.length);
-            generatedPassword = generatedPassword + numbersCase[numCaseIndex];
+            var numericIndex = Math.floor(Math.random() * numericChars.length);
+            generatedPassword = generatedPassword + numericChars[numericIndex];
         }
 
         // Checks if symbol is selected
         if (symbols === true) {
             // Selects random symbol character
-            var symbolCaseIndex = Math.floor(Math.random() * symbolsCase.length);
-            generatedPassword = generatedPassword + symbolsCase[symbolCaseIndex];
+            var symbolIndex = Math.floor(Math.random() * symbolChars.length);
+            generatedPassword = generatedPassword + symbolChars[symbolIndex];
         }
     }
 
