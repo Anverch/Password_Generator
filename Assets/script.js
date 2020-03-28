@@ -38,34 +38,36 @@ function generatePassword() {
         // Checks if lower case is selected 
         if (usesLowerCase) {
             // Selects random lower case character 
-            var lowerCaseIndex = Math.floor(Math.random() * lowerCaseChars.length);
-            generatedPassword = generatedPassword + lowerCaseChars[lowerCaseIndex];
+            generatedPassword = generatedPassword + generateRandomCharacter(lowerCaseChars);
         }
 
         // Checks if upper case is selected 
         if (usesUpperCase) {
             // Selects random upper case character
-            var upperCaseIndex = Math.floor(Math.random() * upperCaseChars.length);
-            generatedPassword = generatedPassword + upperCaseChars[upperCaseIndex];
+            generatedPassword = generatedPassword + generateRandomCharacter(upperCaseChars);
         }
 
         // Checks if numeric character is selected
         if (usesNumeric) {
             // Selects random numeric character 
-            var numericIndex = Math.floor(Math.random() * numericChars.length);
-            generatedPassword = generatedPassword + numericChars[numericIndex];
+            generatedPassword = generatedPassword + generateRandomCharacter(numericChars);
         }
 
         // Checks if symbol is selected
         if (usesSymbols) {
             // Selects random symbol character
-            var symbolIndex = Math.floor(Math.random() * symbolChars.length);
-            generatedPassword = generatedPassword + symbolChars[symbolIndex];
+            generatedPassword = generatedPassword + generateRandomCharacter(symbolChars);
         }
     }
 
     // Selects only specified user length from the generated password
     return generatedPassword.substring(0, userLength);
+}
+
+// Generates Random character from list of characters 
+function generateRandomCharacter(characters) {
+    var symbolIndex = Math.floor(Math.random() * characters.length);
+    return characters[symbolIndex];
 }
 
 // Add event listener to generate button
