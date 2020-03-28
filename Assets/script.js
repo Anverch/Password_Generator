@@ -42,18 +42,14 @@ function generatePassword() {
             var upperCaseIndex = Math.floor(Math.random() * upperCaseChars.length);
             finalPassword = finalPassword + upperCaseChars[upperCaseIndex];
         }
+
+        if (numeric === true) {
+            var numCaseIndex = Math.floor(Math.random() * numbersCase.length);
+            finalPassword = finalPassword + numbersCase[numCaseIndex];
+        }
     }
 
-    // for (var i = 0; i < length; i++) {
-    //     //generating random lower case
 
-    //     //generating random upper case
-
-    //     //generating random number
-    //     var numCaseIndex = Math.floor(Math.random() * numbersCase.length);
-    //     randomPasswordNum = randomPasswordNum + numbersCase[numCaseIndex];
-
-    //     //generating random symbol
     //     var symbolCaseIndex = Math.floor(Math.random() * symbolsCase.length);
     //     randomPasswordSymbol = randomPasswordSymbol + symbolsCase[symbolCaseIndex];
 
