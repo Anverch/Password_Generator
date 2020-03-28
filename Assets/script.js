@@ -47,14 +47,12 @@ function generatePassword() {
             var numCaseIndex = Math.floor(Math.random() * numbersCase.length);
             finalPassword = finalPassword + numbersCase[numCaseIndex];
         }
+
+        if (symbols === true) {
+            var symbolCaseIndex = Math.floor(Math.random() * symbolsCase.length);
+            finalPassword = finalPassword + symbolsCase[symbolCaseIndex];
+        }
     }
-
-
-    //     var symbolCaseIndex = Math.floor(Math.random() * symbolsCase.length);
-    //     randomPasswordSymbol = randomPasswordSymbol + symbolsCase[symbolCaseIndex];
-
-    // }
-
     return finalPassword.substring(0, length);
 }
 
