@@ -7,14 +7,13 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
-
 }
+
 // condition for the password 
 function generatePassword() {
     var length = parseInt(prompt("How long should your password be?"));
 
     //primary condition
-    var errors = [];
     if (length < 8 || length > 50 || !length) {
         return "Length is not enough";
     }
@@ -30,30 +29,30 @@ function generatePassword() {
     var numbersCase = "0123456789";
     var symbolsCase = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
 
-    var finalPassword = "";
+    var generatedPassword = "";
 
-    while (finalPassword.length < length) {
+    while (generatedPassword.length < length) {
         if (lowerCase === true) {
             var lowerCaseIndex = Math.floor(Math.random() * lowerCaseChars.length);
-            finalPassword = finalPassword + lowerCaseChars[lowerCaseIndex];
+            generatedPassword = generatedPassword + lowerCaseChars[lowerCaseIndex];
         }
 
         if (upperCase === true) {
             var upperCaseIndex = Math.floor(Math.random() * upperCaseChars.length);
-            finalPassword = finalPassword + upperCaseChars[upperCaseIndex];
+            generatedPassword = generatedPassword + upperCaseChars[upperCaseIndex];
         }
 
         if (numeric === true) {
             var numCaseIndex = Math.floor(Math.random() * numbersCase.length);
-            finalPassword = finalPassword + numbersCase[numCaseIndex];
+            generatedPassword = generatedPassword + numbersCase[numCaseIndex];
         }
 
         if (symbols === true) {
             var symbolCaseIndex = Math.floor(Math.random() * symbolsCase.length);
-            finalPassword = finalPassword + symbolsCase[symbolCaseIndex];
+            generatedPassword = generatedPassword + symbolsCase[symbolCaseIndex];
         }
     }
-    return finalPassword.substring(0, length);
+    return generatedPassword.substring(0, length);
 }
 
 // Add event listener to generate button
