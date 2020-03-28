@@ -55,7 +55,7 @@ function generatePassword() {
 
     // }
 
-    return finalPassword;
+    return finalPassword.substring(0, length);
 }
 
 // Add event listener to generate button
