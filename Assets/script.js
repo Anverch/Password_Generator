@@ -43,23 +43,34 @@ function generatePassword() {
     // defined variables 
     var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
     var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    //var numbersCase = "0123456789";
-    //var symbolsCase = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
+    var numbersCase = "0123456789";
+    var symbolsCase = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
 
     var randomPasswordLower = "";
     var randomPasswordUpper = "";
+    var randomPasswordNum = "";
+    var randomPasswordSymbol = "";
+
     for (var i = 0; i < length; i++) {
+        //generating random lower case
         var lowerCaseIndex = Math.floor(Math.random() * lowerCaseChars.length);
         randomPasswordLower = randomPasswordLower + lowerCaseChars[lowerCaseIndex];
+
+        //generating random upper case
         var upperCaseIndex = Math.floor(Math.random() * upperCaseChars.length);
         randomPasswordUpper = randomPasswordUpper + upperCaseChars[upperCaseIndex];
 
+        //generating random number
+        var numCaseIndex = Math.floor(Math.random() * numbersCase.length);
+        randomPasswordNum = randomPasswordNum + numbersCase[numCaseIndex];
+
+        //generating random symbol
+        var symbolCaseIndex = Math.floor(Math.random() * symbolsCase.length);
+        randomPasswordSymbol = randomPasswordSymbol + symbolsCase[symbolCaseIndex];
+
     }
 
-    // for (var i = 0; i < length; i++) {
-
-    // }
-    return randomPasswordLower + randomPasswordUpper;
+    return randomPasswordLower + randomPasswordUpper + randomPasswordNum + randomPasswordSymbol;
 }
 
 // Add event listener to generate button
